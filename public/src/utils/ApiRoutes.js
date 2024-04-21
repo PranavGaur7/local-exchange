@@ -1,0 +1,11 @@
+const host = "http://localhost:5000"
+export const signupRoute = `${host}/user/register`
+export const loginRoute = `${host}/user/login`
+export const createMarketRoute = `${host}/market/create`
+export const getAllMarketRoute = `${host}/market/getAllMarket`
+export const getUserMarketRoute = `${host}/market/getUserMarket`
+export const deleteMraketRoute = `${host}/market/deleteMarket/`
+export const getMarketItemRoute = `${host}/market/getMarketItem`
+export const addToKartRoute = `${host}/kart/create`
+export const removeFromKartRoute = `${host}/kart/delete`
+export const getUserKartRoute = `${host}/kart/userKart`

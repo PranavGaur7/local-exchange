@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-
+import { Link} from 'react-router-dom';
 const Search = ({setShowSellModal,setShowTradeModal,filter,setFilter,userLatLong}) => {
     const categories = [
         "All Categories",
@@ -62,7 +62,7 @@ const Search = ({setShowSellModal,setShowTradeModal,filter,setFilter,userLatLong
                     <button className='bg-secondary-color w-24 h-12 rounded-md custom-btn me-5 -ms-12   btn-12' onClick={()=>setShowTradeModal(true)}>Trade</button>
                     <button className='bg-secondary-color w-24 h-12 rounded-md custom-btn   btn-12' onClick={()=> setShowSellModal(true)}>Sell</button>
                 </div>
-                <button className='text-white  ms-3 me-0 sm:me-4 text-4xl md:me-10'><i className='bx bx-cart-alt' ></i></button>
+                <button className='text-white  ms-3 me-0 sm:me-4 text-4xl md:me-10'><Link to='/profile'><i className='bx bx-cart-alt' ></i></Link></button>
             </div>
             <div className='text-white inline lg:hidden ms-12'>
                 <button className='bg-secondary-color w-24 h-12 rounded-md custom-btn me-5 -ms-12   btn-12' onClick={()=>setShowTradeModal(true)}>Trade</button>

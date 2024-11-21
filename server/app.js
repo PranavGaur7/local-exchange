@@ -21,4 +21,4 @@ const marketRouter = require('./Routers/marketRouter');
 const kartRouter = require('./Routers/kartRouter');
 app.use('/user', userRouter);
 app.use('/market', marketRouter);
-app.use('/kart', kartRouter);
+app.use('/kart', kartRouter); 

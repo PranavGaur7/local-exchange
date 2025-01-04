@@ -14,6 +14,11 @@ const server = app.listen(process.env.PORT, () => {
     console.log(`listening on port ${process.env.PORT}`);
 })
 
+app.get('/', (req, res, next) => {
+    res.status(200).json({
+        message: 'bad request'
+    })
+})
 
 
 const userRouter = require('./Routers/userRouter');
@@ -21,4 +26,4 @@ const marketRouter = require('./Routers/marketRouter');
 const kartRouter = require('./Routers/kartRouter');
 app.use('/user', userRouter);
 app.use('/market', marketRouter);
-app.use('/kart', kartRouter); 
+app.use('/kart', kartRouter);  

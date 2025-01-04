@@ -197,7 +197,7 @@ const TradeForm = ({ role, setShowModal }) => {
         </label>
         <label className='w-full mt-5'>
           <p className='text-sm text-white'>Product Details:</p>
-          <textarea autoComplete="off" onChange={onChangeHandler} className='w-full outline-none border-none mt-1 py-2 px-2 resize-none rounded-lg text-secondary-color focus:ring-2 focus:ring-tertiary-color' name="description" id="" cols="30" rows="6" ></textarea>
+          <textarea autoComplete="off" onChange={onChangeHandler} className='w-full outline-none border-none mt-1 py-2 px-2 resize-none rounded-lg text-secondary-color focus:ring-2 focus:ring-tertiary-color' placeholder='Break a Sentence with " . "' name="description" id="" cols="30" rows="6" ></textarea>
         </label>
         <select onChange={onChangeHandler} id="search-dropdown" className="py-2 px-2 mt-5 outline-none border-none rounded-lg text-secondary-color focus:ring-2 focus:ring-tertiary-color" name='category' required>
           {
@@ -231,7 +231,7 @@ const TradeForm = ({ role, setShowModal }) => {
 
         <div className=' flex items-center justify-between mt-5 '>
           <label className='flex items-center'>
-            <p className='text-white me-2'>Price:</p>
+            <p className='text-white me-2'>Price (in $):</p>
             <input autoComplete="off" onChange={onChangeHandler} type="number" name='price' className='outline-none border-none  py-2 px-2 resize-none rounded-lg text-secondary-color focus:ring-2 focus:ring-tertiary-color' />
           </label>
           <button onClick={handleSubmit} className='bg-white  py-2 px-4 text-xl outline-none border-none rounded-lg text-tertiary-color focus:ring-2 focus:ring-tertiary-color'>Submit</button>

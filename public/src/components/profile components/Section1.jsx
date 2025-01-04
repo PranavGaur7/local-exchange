@@ -55,11 +55,11 @@ const Section1 = () => {
             <div className=' w-full h-screen  overflow-y-scroll setScroll overflow-x-hidden px-20'>
                 <div className="selection w-full flex items-center justify-between">
                     <input type="radio" id="kart" name="section" value="kart" hidden onChange={changeHandler} />
-                    <label className='w-5/12 h-14 rounded-md mx-4 my-5 bg-primary-color flex items-center justify-center cursor-pointer' htmlFor="kart"><i className='bx bx-cart-alt text-icons-color text-xl me-2' ></i> <span className='text-white'>Kart</span></label>
+                    <label className={`w-5/12 h-14 rounded-md mx-4 my-5 bg-primary-color flex items-center justify-center cursor-pointer ${section=="kart"?"outline outline-tertiary-color":""}`} htmlFor="kart"><i className='bx bx-cart-alt text-icons-color text-xl me-2' ></i> <span className='text-white'>Kart</span></label>
                     <input type="radio" id="trader" name="section" value="Trader" hidden onChange={changeHandler} />
-                    <label className='w-5/12 h-14 rounded-md mx-4 my-5 bg-primary-color flex items-center justify-center cursor-pointer' htmlFor="trader"><i className='bx bx-purchase-tag text-icons-color text-xl me-2'></i> <span className='text-white'>Trades</span></label>
+                    <label className={`w-5/12 h-14 rounded-md mx-4 my-5 bg-primary-color flex items-center justify-center cursor-pointer ${section=="Trader"?"outline outline-tertiary-color":""}`} htmlFor="trader"><i className='bx bx-purchase-tag text-icons-color text-xl me-2'></i> <span className='text-white'>Trades</span></label>
                     <input type="radio" id="seller" name="section" value="Seller" hidden onChange={changeHandler} />
-                    <label className='w-5/12 h-14 rounded-md mx-4 my-5 bg-primary-color flex items-center justify-center cursor-pointer' htmlFor="seller"><i className='bx bx-receipt text-icons-color text-xl me-2'  ></i> <span className='text-white'>Sells</span></label>
+                    <label className={`w-5/12 h-14 rounded-md mx-4 my-5 bg-primary-color flex items-center justify-center cursor-pointer ${section=="Seller"?"outline outline-tertiary-color":""}`} htmlFor="seller"><i className='bx bx-receipt text-icons-color text-xl me-2'  ></i> <span className='text-white'>Sells</span></label>
                 </div>
                 {(items.length !== 0) && <div className='flex flex-wrap  justify-between'>
                     {

@@ -33,7 +33,7 @@ const CardComponent = ({ item,isInKart }) => {
                 </div>
 
                 <div className="px-5 pb-5">
-                    <Link to={ `/market/${item[0]}`} >
+                    <Link to={ `/market/${item[0]}/${isInKart?1:0}`} >
                         <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white truncate hover:underline hover:underline-offset-2" >{item[1]}</h5>
                     </Link>
                     <div className="flex items-center mt-2.5 mb-5 text-[#ffffff93]">

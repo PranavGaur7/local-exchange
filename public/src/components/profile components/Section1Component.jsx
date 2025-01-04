@@ -46,7 +46,7 @@ const Section1Component = ({ item, fetchData, section }) => {
         <div className='className="z-10  h-[350px] w-full lg:w-5/12 p-2  lg:mx-5 my-5  border-2 border-white/15 flex flex-col justify-between  rounded-lg shadow bg-[#1d1d1d] z-50 '>
             <div className='item w-full h-56 rounded-md bg-center bg-cover bg-no-repeat  bg-local mb-4' style={{ backgroundImage: `url(${item.productImages[0]})` }}>            </div>
             <div className="p-2">
-                <Link to={`/market/${item._id}`} >
+                <Link to={`/market/${item._id}/${3}`} >
                     <h5 className="text-base font-normal tracking-tight text-gray-900 dark:text-white truncate hover:underline hover:underline-offset-2" >{item.product}</h5>
                 </Link>
                 <div className="flex items-center mt-2.5 mb-5 text-sm text-[#ffffff93]">

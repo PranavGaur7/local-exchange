@@ -70,6 +70,7 @@ module.exports.removeKart = async (req, res) => {
 
 module.exports.getUserKart = async (req, res) => {
     const token = req.header('auth-token');
+    
     const uid = jwt.verify(token, process.env.JWT_KEY).payload;
     try {
 

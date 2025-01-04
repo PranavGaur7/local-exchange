@@ -45,8 +45,8 @@ module.exports.isLoggedIn = async function isLoggedIn(req, res) {
 }
 module.exports.getUser = async function getUser(req, res) {
     try {
-        const data = req.body;
-        const user = await userModel.findOne({ username:data.username });
+        const token = req.header('auth-token');
+        const user = await userModel.findOne({ _id:token });
         if (user) {
             return res.json({ user: user})
         }

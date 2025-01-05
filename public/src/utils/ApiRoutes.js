@@ -1,5 +1,5 @@
-const host = "https://local-exchange.vercel.app"
-// const host = "http://localhost:5000"
+// const host = "https://local-exchange.vercel.app"
+const host = "http://localhost:5000"
 export const signupRoute = `${host}/user/register`
 export const loginRoute = `${host}/user/login`
 export const getUserRoute = `${host}/user/det`

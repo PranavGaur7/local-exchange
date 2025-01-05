@@ -168,7 +168,7 @@ const TradeForm = ({ role, setShowModal }) => {
         duration: 0.4
       }}
     >
-      <motion.div className='w-2/3   relative py-10 bg-white flex flex-col px-16   rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100'
+      <motion.div className='w-11/12 lg:w-2/3  relative py-10 bg-white flex flex-col px-2 sm:px-10 md:px-16   rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100'
         initial={{
           opacity: 0,
           scale: 0.5
@@ -217,7 +217,7 @@ const TradeForm = ({ role, setShowModal }) => {
           {
             imageArray.map((element, index) => {
               return (
-                <div className='relative mt-6 rounded-lg h-16 w-24 bg-center bg-cover bg-no-repeat bg-local border-2' style={{ "backgroundImage": `url(${element})` }} key={index}>
+                <div className='relative mt-6 rounded-lg h-12 sm:h-16 w-12 sm:w-24 bg-center bg-cover bg-no-repeat bg-local border-2' style={{ "backgroundImage": `url(${element})` }} key={index}>
                   <div className='bx bx-x h-4 w-4 bg-white text-xl absolute -top-2 -right-2 rounded-full flex items-center justify-center cursor-pointer'
                     onClick={() => removeImage(index)}
                   >
@@ -229,12 +229,12 @@ const TradeForm = ({ role, setShowModal }) => {
           }
         </div>
 
-        <div className=' flex items-center justify-between mt-5 '>
-          <label className='flex items-center'>
+        <div className=' flex flex-col sm:flex-row items-center justify-between mt-5 '>
+          <label className='flex items-center w-full'>
             <p className='text-white me-2'>Price (in $):</p>
-            <input autoComplete="off" onChange={onChangeHandler} type="number" name='price' className='outline-none border-none  py-2 px-2 resize-none rounded-lg text-secondary-color focus:ring-2 focus:ring-tertiary-color' />
+            <input autoComplete="off" onChange={onChangeHandler} type="number" name='price' className='w-full outline-none border-none sm:w-auto  py-2 px-2 resize-none rounded-lg text-secondary-color focus:ring-2 focus:ring-tertiary-color' />
           </label>
-          <button onClick={handleSubmit} className='bg-white  py-2 px-4 text-xl outline-none border-none rounded-lg text-tertiary-color focus:ring-2 focus:ring-tertiary-color'>Submit</button>
+          <button onClick={handleSubmit} className='mt-5 w-1/2 sm:w-auto bg-white py-2 px-4 text-base sm:text-xl outline-none border-none rounded-lg text-tertiary-color focus:ring-2 focus:ring-tertiary-color'>Submit</button>
         </div>
       </motion.div>
     </motion.div>

@@ -22,9 +22,9 @@ const Hsection2 = () => {
     }
 
     return (
-        <Container className='font-unbounded px-10 md:px-32 py-28 origin-top-right'>
+        <Container className='font-unbounded px-6 ms:px-10 md:px-32 py-28 origin-top-right'>
             <div>
-                <motion.h1 className='text-6xl flex flex-col mb-10'
+                <motion.h1 className='text-4xl sm:text-5xl lg:text-6xl flex flex-col mb-10'
                     initial={{
                         rotateX: "-70deg",
                         y: 70,
@@ -60,7 +60,7 @@ const Hsection2 = () => {
                     >
                         <path d="M0.333333 3C0.333333 4.47276 1.52724 5.66667 3 5.66667C4.47276 5.66667 5.66667 4.47276 5.66667 3C5.66667 1.52724 4.47276 0.333333 3 0.333333C1.52724 0.333333 0.333333 1.52724 0.333333 3ZM475 3L475.255 3.42984L476.82 2.5H475V3ZM438.668 65L441.872 60.197L436.111 59.8239L438.668 65ZM3 3.5H475V2.5H3V3.5ZM474.745 2.57016C459.928 11.3742 441.341 27.8789 438.461 60.47L439.457 60.5581C442.3 28.3895 460.613 12.1303 475.255 3.42984L474.745 2.57016Z"></path>
                     </motion.svg>
-                    <motion.h2 className='w-1/5 text-lg ms-8'
+                    <motion.h2 className='w-1/5 text-xs sm:text-sm lg:text-lg ms-8'
                         initial={{
                             rotateX: "-70deg",
                             y: 90,
@@ -88,15 +88,35 @@ const Hsection2 = () => {
             <div className='flex items-center justify-center flex-wrap mt-5'>
                 <MagHover>
 
-                    <motion.div className="bg-[#ece8e5] h-[450px] w-full md:w-[450px] rounded-md mx-3 my-3 px-10 pt-12 overflow-hidden"                >
-                        <h1 className='text-2xl font-medium w-1/3 mb-5'>{CardData.card1.title}</h1>
-                        <span className='text-lg text-gray-500 font-normal'>{CardData.card1.description}</span>
-                        <div className='bg-white mt-10 h-60 bottom-0 rounded-xl overflow-hidden  flex justify-center'>
+                    <motion.div className="bg-[#ece8e5] h-[350px] sm:h-[450px] w-full md:w-[450px] rounded-md sm:mx-3 my-3 px-6 sm:px-10 pt-12 overflow-hidden"                >
+                        <h1 className='text-xl sm:text-2xl font-medium w-1/3 mb-2 sm:mb-5'>{CardData.card1.title}</h1>
+                        <span className='text-sm sm:text-lg text-gray-500 font-normal'>{CardData.card1.description}</span>
+                        <div className='bg-white mt-5 sm:mt-10 h-60 bottom-0 rounded-xl overflow-hidden  flex justify-center'>
                             <img src={CardData.card1.image} alt="" className='h-56' />
                         </div>
                     </motion.div>
                 </MagHover>
                 <MagHover>
+
+                    <motion.div className="bg-[#f7e3ef] h-[350px] sm:h-[450px] w-full md:w-[450px] rounded-md sm:mx-3 my-3 px-6 sm:px-10 pt-12 overflow-hidden"                >
+                        <h1 className='text-xl sm:text-2xl font-medium w-1/3 mb-2 sm:mb-5'>{CardData.card2.title}</h1>
+                        <span className='text-sm sm:text-lg text-gray-500 font-normal'>{CardData.card2.description}</span>
+                        <div className='bg-white mt-5 sm:mt-10 h-60 bottom-0 rounded-xl overflow-hidden  flex justify-center'>
+                            <img src={CardData.card2.image} alt="" className='h-56' />
+                        </div>
+                    </motion.div>
+                </MagHover>
+                <MagHover>
+
+                    <motion.div className="bg-[#efe8ff] h-[350px] sm:h-[450px] w-full md:w-[450px] rounded-md sm:mx-3 my-3 px-6 sm:px-10 pt-12 overflow-hidden"                >
+                        <h1 className='text-xl sm:text-2xl font-medium w-1/3 mb-2 sm:mb-5'>{CardData.card3.title}</h1>
+                        <span className='text-sm sm:text-lg text-gray-500 font-normal'>{CardData.card3.description}</span>
+                        <div className='bg-white mt-5 sm:mt-10 h-60 bottom-0 rounded-xl overflow-hidden  flex justify-center'>
+                            <img src={CardData.card2.image} alt="" className='h-56' />
+                        </div>
+                    </motion.div>
+                </MagHover>
+                {/* <MagHover>
 
                     <div className="bg-[#f7e3ef] h-[450px] w-full md:w-[450px] rounded-md mx-3 my-3 px-10 pt-12 overflow-hidden">
                         <h1 className='text-2xl font-medium w-1/3 mb-5'>{CardData.card2.title}</h1>
@@ -115,7 +135,7 @@ const Hsection2 = () => {
                             <img src={CardData.card3.image} alt="" className='h-56' />
                         </div>
                     </div>
-                </MagHover>
+                </MagHover> */}
             </div>
         </Container >
     )

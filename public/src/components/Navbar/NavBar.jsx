@@ -46,7 +46,7 @@ const NavBar = () => {
                     {hiddenBar && <List />}
                 </div>
             </AnimatePresence>
-            <motion.nav className="navbar border-b-[0.01px] border-secondary-color max-w-full bg-[#1a1a1a] h-24 w-screen flex items-center justify-between ps-10 pe-0 xl:px-14 font-unbounded sticky z-40 top-0 left-0 transition-all ease-in-out duration-50000">
+            <motion.nav className="navbar border-b-[0.01px] border-secondary-color max-w-full bg-[#1a1a1a] h-24 w-screen flex items-center justify-between ps-10 pe-0 xl:px-14 font-unbounded sticky z-30 top-0 left-0 transition-all ease-in-out duration-50000">
                 <motion.div className="logo">
                     <motion.img className="h-16" src={logo} alt="" />
                 </motion.div>

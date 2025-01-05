@@ -3,10 +3,15 @@ const app = express();
 var cors = require('cors')
 // app.use(express.json());
 app.use(cors({
-    origin: ["http://localhost:5173","https://barter-drab-phi.vercel.app/"],
+    origin: ["https://barter-drab-phi.vercel.app"],
     methods: ["GET", "POST","DELETE","PATCH"],
     credentials: true,
 }))
+// app.use(cors({
+//     origin: ["http://localhost:5173","https://barter-drab-phi.vercel.app"],
+//     methods: ["GET", "POST","DELETE","PATCH"],
+//     credentials: true,
+// }))
 app.use(express.json({ limit: '50mb' })); // Adjust the limit as per your requirements
 
 require('dotenv').config();

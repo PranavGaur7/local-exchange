@@ -1,3 +1,4 @@
+import { Tooltip } from '@mui/material'
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 
@@ -6,7 +7,7 @@ const ProfileDetail = () => {
     return (
         <>
             {result && <div className={`hidden xl:block right-0 z-40 h-auto relative w-96 font-unbounded  bg-primary-color mx-0 xl:mx-5 my-0 xl:my-5 rounded-lg px-4 py-4 `}>
-                
+
                 <div>
                     <div className='h-28 w-full flex  mb-10'>
                         <div className='h-28 w-28 bg-center bg-cover bg-no-repeat bg-local rounded-md ' style={{ backgroundImage: `url(${"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4azEguG9_sF536e2Z1He0V7vE56p6Qr5EKqGQ2U3IMlrFE9RcSEklLMeaL4FKwJ6MJG8&usqp=CAU"})` }}></div>
@@ -22,7 +23,9 @@ const ProfileDetail = () => {
                 <div>
                     <div className='flex justify-between items-center'>
                         <p className='text-white font-light '>Recent Messages</p>
-                        <i className='bx bx-help-circle text-2xl text-icons-color'></i>
+                        <Tooltip title="Recent chat with purchasers">
+                            <i className='bx bx-help-circle text-2xl text-icons-color'></i>
+                        </Tooltip>
                     </div>
 
                 </div>

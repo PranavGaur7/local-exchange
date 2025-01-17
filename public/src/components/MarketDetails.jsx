@@ -8,27 +8,35 @@ import styled from 'styled-components'
 import NavBar from './Navbar/NavBar';
 import bg from "../assets/sec3-bg.png"
 import useGetUser from '../hooks/useGetUser';
+import useAddContact from '../hooks/useAddContact';
 
 const MarketDetails = () => {
     const { itemId, inKart } = useParams();
     const result = useSelector((store) => store.kart.item);
-    console.log(result);
-
+    const resultUser = useSelector((store) => store.user.userDetails);
+    const resultLog = useSelector((store) => store.user);
     const navigate = useNavigate();
     const [itemDetails, setItemDetails] = useState({})
     const [merchantDetails, setMerchantDetails] = useState({})
+    useEffect(() => {
+        if (resultLog) {
+            if (!resultLog.isLoggedIn) {
+                navigate('/login')
+            }
+        }
+    }, [resultLog])
     const query = useQuery({
         queryKey: ['marketItem'], queryFn: async () => {
             const response = await getMarketItem({ itemId: itemId });
-            setItemDetails(response.data)
             console.log(response.data);
+            
+            setItemDetails(response.data)
             return response
         }
     })
     const userQuery = useQuery({
         queryKey: ['merchantDetails'], queryFn: async () => {
             const response = await useGetUser(itemDetails.user);
-            console.log(response.user);
             setMerchantDetails(response.user)
             return response
         },
@@ -38,6 +46,31 @@ const MarketDetails = () => {
     const currentImage = (index) => {
         console.log(index);
         setSelectedIndex(index)
+    }
+
+    const HandleRoute = async (e) => {
+        e.preventDefault()
+        if (!merchantDetails || !resultUser || !itemDetails) return;
+        try {
+            console.log(merchantDetails);
+            console.log(resultUser);
+
+            const data = await useAddContact({
+                id2: merchantDetails._id,
+                id1: resultUser._id,
+                name1: resultUser.username,
+                name2: merchantDetails.username,
+                role1: "Customer",
+                role2: itemDetails.role,
+                product: itemDetails._id,
+                productName: itemDetails.product
+            })
+            console.log(data);
+            navigate(`/chat/${resultUser._id}/${merchantDetails._id}`);
+            
+        } catch (error) {
+            console.error(error);
+        }
     }
     return (
         <div className='bg-center bg-no-repeat bg-cover bg-fixed py-1' style={{ backgroundImage: `url(${bg})` }}>
@@ -75,12 +108,13 @@ const MarketDetails = () => {
                         </div>
                         <div className='w-full relative text-white bg-black  rounded-lg shadow-2xl mt-4 px-6 py-6 '>
                             <p className='text-base sm:text-xl flex items-center mb-6'>Sellers Email: <span className='text-tertiary-color ms-3 text-base sm:text-lg'>{merchantDetails?.email}</span></p>
-                            <motion.button className='block mb-6 m-auto w-full rounded-lg border-2 border-tertiary-color py-4 backdrop-blur-3xl bg-white/10 hover:bg-secondary-color '
+                            <motion.button onClick={HandleRoute} className='disabled:text-gray-400 block mb-6 m-auto w-full rounded-lg border-2 border-tertiary-color py-4 backdrop-blur-3xl bg-white/10 hover:bg-secondary-color '
                                 whileHover={{
                                     y: -2,
                                     scale: 1.01
                                 }}
-                            >Chat With {itemDetails.role}</motion.button>
+                                disabled={merchantDetails && resultUser && (merchantDetails._id == resultUser._id)}
+                            >{merchantDetails && resultUser && (merchantDetails._id == resultUser._id) ? "Your Product" : `Chat With ${itemDetails.role}`}</motion.button>
                             {
                                 inKart == 1 && <motion.button className='block m-auto w-full rounded-lg border-2 border-tertiary-color py-4 backdrop-blur-3xl bg-white/10 hover:bg-secondary-color mb-6'
                                     whileHover={{
@@ -90,7 +124,7 @@ const MarketDetails = () => {
                                 >Already in Kart</motion.button>
                             }
                             {
-                                inKart == 0 && <motion.button className='block m-auto w-full rounded-lg border-2 border-tertiary-color py-4 backdrop-blur-3xl bg-white/10 hover:bg-secondary-color mb-6'
+                                inKart == 0 && <motion.button className={`block m-auto w-full rounded-lg border-2 border-tertiary-color py-4 backdrop-blur-3xl bg-white/10 hover:bg-secondary-color mb-6 ${(merchantDetails && resultUser && (merchantDetails._id == resultUser._id)) ? "hidden" : ""}`}
                                     whileHover={{
                                         y: -2,
                                         scale: 1.01

@@ -95,7 +95,7 @@ const SignUp = () => {
         <img src={logo} alt="" className='h-0 lg:h-1/4 fixed  lg:left-2' />
 
       </div>
-      <motion.div className="h-full w-4/5 lg:w-3/5 relative  float-end bg-white rounded-s-[80px] ps-10 sm:ps-24 md:ps-40 pt-24 sm:pt-36 flex flex-col pe-16 md:pe-36 "
+      <motion.div className=" h-full w-4/5 lg:w-3/5 relative  float-end bg-white rounded-s-[80px] ps-10 sm:ps-24 md:ps-40 pt-24 sm:pt-36 flex flex-col pe-16 md:pe-36 "
         initial={{
           x: "100vw"
         }}
@@ -106,8 +106,8 @@ const SignUp = () => {
           duration: 1
         }}
       >
-        <img src={floatImg} alt="" className='absolute h-0 sm:-left-60 sm:h-1/2 md:h-3/4 md:-left-96 bottom-0 ' />
-        <motion.h1 className='text-4xl font-bold text-secondary-color mb-16'
+        <img src={floatImg} alt="" className='z-0 absolute h-0 sm:-left-60 sm:h-1/2 md:h-3/4 md:-left-96 bottom-0 ' />
+        <motion.h1 className='z-10 text-4xl font-bold text-secondary-color mb-16'
           initial={{
             opacity: 0
           }}
@@ -119,7 +119,7 @@ const SignUp = () => {
             duration: 0.5
           }}
         >Create Account</motion.h1>
-        <motion.input type="text" placeholder='Your Name' className='border-b-4 pb-1 mb-8 text-md outline-none focus:border-secondary-color transition-all ease-in-out duration-700'
+        <motion.input type="text" placeholder='Your Name' className='z-10 border-b-4 pb-1 mb-8 text-md outline-none focus:border-secondary-color transition-all ease-in-out duration-700'
           initial={{
             opacity: 0
           }}
@@ -134,7 +134,7 @@ const SignUp = () => {
           value={userData.username}
           onChange={handleChange}
         />
-        <motion.input type="email" placeholder='Your Email' className='border-b-4 pb-1 mb-8 text-md outline-none focus:border-secondary-color transition-all ease-in-out duration-700'
+        <motion.input type="email" placeholder='Your Email' className='z-10 border-b-4 pb-1 mb-8 text-md outline-none focus:border-secondary-color transition-all ease-in-out duration-700'
           initial={{
             opacity: 0
           }}
@@ -149,7 +149,7 @@ const SignUp = () => {
           value={userData.email}
           onChange={handleChange}
         />
-        <motion.input type="password" placeholder='Password' className='border-b-4 pb-1 mb-8 text-md outline-none focus:border-secondary-color transition-all ease-in-out duration-700'
+        <motion.input type="password" placeholder='Password' className='z-10 border-b-4 pb-1 mb-8 text-md outline-none focus:border-secondary-color transition-all ease-in-out duration-700'
           initial={{
             opacity: 0
           }}
@@ -164,7 +164,7 @@ const SignUp = () => {
           value={userData.password}
           onChange={handleChange}
         />
-        <motion.input type="password" placeholder='Confirm Password' className='border-b-4 pb-1 mb-6 text-md outline-none focus:border-secondary-color transition-all ease-in-out duration-700'
+        <motion.input type="password" placeholder='Confirm Password' className='z-10 border-b-4 pb-1 mb-6 text-md outline-none focus:border-secondary-color transition-all ease-in-out duration-700'
           initial={{
             opacity: 0
           }}
@@ -179,7 +179,7 @@ const SignUp = () => {
           value={userData.confirmPassword}
           onChange={handleChange}
         />
-        <motion.button onClick={handleSubmit} className=" group relative h-14 w-48 sm:w-60 mt-8 overflow-hidden rounded-md bg-[#3c3ca4] text-lg sm:text-xl shadow font-normal"
+        <motion.button onClick={handleSubmit} className="z-10  group relative h-14 w-48 sm:w-60 mt-8 overflow-hidden rounded-md bg-[#3c3ca4] text-lg sm:text-xl shadow font-normal"
 
           initial={{
             opacity: 0
@@ -194,8 +194,8 @@ const SignUp = () => {
 
         >
 
-          <div className="absolute inset-0 w-0 bg-white transition-all duration-[500ms] ease-out group-hover:w-full"></div>
-          <span className="relative text-white group-hover:text-[#3c3ca4] flex items-center justify-center">
+          <div className="z-10 absolute inset-0 w-0 bg-white transition-all duration-[500ms] ease-out group-hover:w-full"></div>
+          <span className="z-10 relative text-white group-hover:text-[#3c3ca4] flex items-center justify-center">
             Create Account</span>
         </motion.button>
       </motion.div>

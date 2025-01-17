@@ -18,6 +18,7 @@ import MarketDetails from './components/MarketDetails'
 import { compileKartAsync } from './redux/marketDetails/kartSlice'
 import Profile from './components/Profile'
 import Loader from './components/Loader'
+import Chat from './components/chat component/Chat'
 function App() {
   const dispatch = useDispatch();
   const result = useSelector((store) => store.user.isLoggedIn);
@@ -56,6 +57,7 @@ function App() {
               <Route path='/profile' element={<Profile />} />
               <Route path='/market' element={<Market />} />
               <Route path='/market/:itemId/:inKart' element={<MarketDetails />} />
+              <Route path='/chat/:userId/:toId' element={<Chat />} />
             </>}
           </Routes>
         </BrowserRouter>

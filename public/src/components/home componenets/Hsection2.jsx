@@ -112,7 +112,7 @@ const Hsection2 = () => {
                         <h1 className='text-xl sm:text-2xl font-medium w-1/3 mb-2 sm:mb-5'>{CardData.card3.title}</h1>
                         <span className='text-sm sm:text-lg text-gray-500 font-normal'>{CardData.card3.description}</span>
                         <div className='bg-white mt-5 sm:mt-10 h-60 bottom-0 rounded-xl overflow-hidden  flex justify-center'>
-                            <img src={CardData.card2.image} alt="" className='h-56' />
+                            <img src={CardData.card3.image} alt="" className='h-56' />
                         </div>
                     </motion.div>
                 </MagHover>

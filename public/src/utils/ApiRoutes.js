@@ -1,8 +1,12 @@
-const host = "https://local-exchange.vercel.app"
-// const host = "http://localhost:5000"
+// const host = "https://local-exchange.vercel.app"
+export const host = "http://localhost:5000"
 export const signupRoute = `${host}/user/register`
 export const loginRoute = `${host}/user/login`
 export const getUserRoute = `${host}/user/det`
+export const getUserContactsRoute = `${host}/user/getcontacts`
+export const addUserContactsRoute = `${host}/user/addcontact`
+export const addMessageroute = `${host}/user/addmessage`
+export const getAllmessagesroute = `${host}/user/getmessage`
 export const createMarketRoute = `${host}/market/create`
 export const getAllMarketRoute = `${host}/market/getAllMarket`
 export const getUserMarketRoute = `${host}/market/getUserMarket`

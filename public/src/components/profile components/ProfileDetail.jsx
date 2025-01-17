@@ -1,6 +1,7 @@
 import { Tooltip } from '@mui/material'
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
+import Contacts from '../chat component/Contacts'
 
 const ProfileDetail = () => {
     const result = useSelector((store) => store.user.userDetails)
@@ -20,14 +21,14 @@ const ProfileDetail = () => {
                         </div>
                     </div>
                 </div>
-                <div>
+                <div className='flex flex-col w-full overflow-y-scroll h-5/6'>
                     <div className='flex justify-between items-center'>
                         <p className='text-white font-light '>Recent Messages</p>
                         <Tooltip title="Recent chat with purchasers">
                             <i className='bx bx-help-circle text-2xl text-icons-color'></i>
                         </Tooltip>
                     </div>
-
+                    <Contacts/>
                 </div>
             </div>}
         </>

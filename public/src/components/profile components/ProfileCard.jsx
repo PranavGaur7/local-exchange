@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import React from 'react'
 import { useSelector } from 'react-redux';
 import Tooltip from '@mui/material/Tooltip';
+import Contacts from '../chat component/Contacts';
 
 const ProfileCard = ({ show, setShow }) => {
     const result = useSelector((store) => store.user.userDetails)
@@ -68,8 +69,8 @@ const ProfileCard = ({ show, setShow }) => {
                             <i className='bx bx-help-circle text-2xl text-icons-color'></i>
                         </Tooltip>
                     </div>
-                    <div className='bg-primary-color w-full min-h-48 rounded-md'>
-
+                    <div className='bg-primary-color w-full min-h-48 rounded-md px-5 py-4'>
+                        <Contacts/>
                     </div>
                 </div>
             </motion.div>

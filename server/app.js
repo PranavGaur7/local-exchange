@@ -2,17 +2,17 @@ const express = require('express')
 const app = express();
 var cors = require('cors')
 const socket = require('socket.io')
-// app.use(express.json());
-// app.use(cors({
-//     origin: ["https://barter-drab-phi.vercel.app"],
-//     methods: ["GET", "POST","DELETE","PATCH"],
-//     credentials: true,
-// }))
+app.use(express.json());
 app.use(cors({
-    origin: ["http://localhost:5173"],
-    methods: ["GET", "POST", "DELETE", "PATCH"],
+    origin: ["https://barter-drab-phi.vercel.app"],
+    methods: ["GET", "POST","DELETE","PATCH"],
     credentials: true,
 }))
+// app.use(cors({
+//     origin: ["http://localhost:5173"],
+//     methods: ["GET", "POST", "DELETE", "PATCH"],
+//     credentials: true,
+// }))
 app.use(express.json({ limit: '50mb' })); // Adjust the limit as per your requirements
 
 require('dotenv').config();
@@ -21,10 +21,16 @@ const server = app.listen(process.env.PORT, () => {
 })
 const io = socket(server, {
     cors: {
-        origin: "http://localhost:5173",
+        origin: "https://barter-drab-phi.vercel.app",
         credentials: true,
     },
 })
+// const io = socket(server, {
+//     cors: {
+//         origin: "http://localhost:5173",
+//         credentials: true,
+//     },
+// })
 global.onlineUsers = new Map();
 
 io.on("connection", (socket) => {

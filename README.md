@@ -54,8 +54,6 @@ To run **Local Exchange** locally, follow these steps:
    PORT=5000
    MONGO_URI=your_mongodb_connection_string
    JWT_SECRET=your_jwt_secret
-   EMAIL_USER=your_email_address
-   EMAIL_PASS=your_email_password
    ```
 
 4. **Start the application**:

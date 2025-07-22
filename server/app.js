@@ -4,7 +4,7 @@ var cors = require('cors')
 const socket = require('socket.io')
 app.use(express.json());
 app.use(cors({
-    origin: ["https://barter-drab-phi.vercel.app"],
+    origin: ["https://barter-drab-phi.vercel.app","https://barter.illuminou.shop"],
     methods: ["GET", "POST","DELETE","PATCH"],
     credentials: true,
 }))

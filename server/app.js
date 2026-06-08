@@ -13,7 +13,7 @@ app.use(cors({
 //     methods: ["GET", "POST", "DELETE", "PATCH"],
 //     credentials: true,
 // }))
-app.use(express.json({ limit: '50mb' })); // Adjust the limit as per your requirements
+app.use(express.json({ limit: '50mb' })); 
 
 require('dotenv').config();
 const server = app.listen(process.env.PORT, () => {
